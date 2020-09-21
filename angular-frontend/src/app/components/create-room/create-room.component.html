@@ -1,0 +1,26 @@
+<h3>Create Room</h3>
+<form (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="name">Type</label>
+    <select name="type" class="form-control" id="type" required [(ngModel)]="room.type">
+    <option *ngFor="let type of getRoomTypes();">
+      {{type}}
+    </option>
+  </select>
+  </div>
+  
+  <div class="form-group">
+    <label for="name">Size</label>
+    <select name="type" class="form-control" id="size" required [(ngModel)]="room.size">
+      <option *ngFor="let type of getRoomSizes();">
+        {{type}}
+      </option>
+    </select>
+  </div>
+  
+  <div class="form-group">
+    <label for="name">Price</label>
+    <input type="number" class="form-control" id="password" required [(ngModel)]="room.price" name="price">
+  </div>  
+  <button type="submit" class="btn btn-success">Submit</button>
+</form>

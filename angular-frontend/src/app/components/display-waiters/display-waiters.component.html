@@ -1,0 +1,27 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Waiters Display</h2>
+  </div>
+  <div class="panel-body">
+    <button (click)="createWaiter()" class="btn btn-info">Create Waiter</button>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Delete/Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let waiter of waiters | async">
+          <td>{{waiter.username}}</td>
+          <td>{{waiter.email}}</td>
+          <th>{{waiter.password}}</th>
+          <td><button (click)="deleteWaiter(waiter.id)" class="btn btn-danger">Delete</button>
+          <button (click)="editWaiter(waiter.id)"class="btn btn-info" style="margin-left: 10px">Edit</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

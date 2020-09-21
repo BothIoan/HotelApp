@@ -1,0 +1,9 @@
+<h3>Rank Booking</h3>
+<form (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="name">Rank</label>
+    <input type="range" min="1" max="10" value="5" class="slider" required [(ngModel)]="booking.ranking" name = "rankingBar" oninput="amount.value = rankingBar.value">
+    <output id="amount" name="amount" for="rankingBar" >5</output>
+  </div>
+  <button type="submit" class="btn btn-success">Submit</button>
+</form>

@@ -1,0 +1,58 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Rooms</h2>
+    </div>
+          <div class= panel-header>
+            <label for="name">Type</label>
+            <select name="type" class="form-control" id="type" required [(ngModel)]="roomType">
+              <option *ngFor="let type of getRoomTypes();">
+              {{type}}
+              </option>
+            </select>
+      
+            <label for="name">Size</label>
+            <select name="type" class="form-control" id="size" required [(ngModel)]="roomSize">
+              <option *ngFor="let type of getRoomSizes();">
+              {{type}}
+              </option>
+            </select>
+
+            <label for="name">State</label>
+            <select name="type" class="form-control" id="state" required [(ngModel)]="roomState">
+              <option *ngFor="let type of getRoomStates();">
+              {{type}}
+              </option>
+            </select>
+      
+            <label for="name">PriceMin</label>
+            <input type="number" class="form-control" id="password" required [(ngModel)]="roomPriceMin" name="price">
+            <label for="name">PriceMax</label>
+            <input type="number" class="form-control" id="password" required [(ngModel)]="roomPriceMax" name="price">
+          </div>
+  
+    <div class="panel-body">
+      
+      <table class="table table-striped"> 
+        <thead>
+          <tr>
+          <th>Number</th>
+          <th>Size</th>
+          <th>Type</th>
+          <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let room of filteredRooms;">
+            <td>{{room.id}}</td>
+            <td>{{room.size}}</td>
+            <td>{{room.type}}</td>
+            <td>{{room.price}}</td>
+            <td>
+            <button (click)="bookRoom(room.id)"class="btn btn-info" style="margin-left: 10px" >book</button>
+            <button (click)="rankRoom(room.id)"class="btn btn-info" style="margin-left: 10px" >review</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

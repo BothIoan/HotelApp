@@ -1,0 +1,33 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Reviews</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+          <th>Review</th>
+          <th>Ranking</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let roomranking of rankings | async">
+            <td>{{roomranking.comment}}</td>
+            <td>{{roomranking.ranking}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <form (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="name">Ranking</label>
+    <input type="range" min="1" max="5" value="3" class="slider" required [(ngModel)]="ranking.ranking" name = "rankingBar" id = "rankingBar" oninput="amount.value = rankingBar.value">
+    <output id="amount" name="amount" for="rankingBar" >3</output>
+  </div>
+  <div class="form-group">
+    <label for="name">Review</label>
+    <input type="text" class="form-control" id="name" required [(ngModel)]="ranking.comment" name="review">
+  </div>
+  <button type="submit" class="btn btn-success">Submit</button>
+</form>
+  </div>

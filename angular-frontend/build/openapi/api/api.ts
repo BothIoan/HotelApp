@@ -1,0 +1,13 @@
+export * from './adminController.service';
+import { AdminControllerService } from './adminController.service';
+export * from './bookingController.service';
+import { BookingControllerService } from './bookingController.service';
+export * from './customerController.service';
+import { CustomerControllerService } from './customerController.service';
+export * from './roomController.service';
+import { RoomControllerService } from './roomController.service';
+export * from './roomrankingController.service';
+import { RoomrankingControllerService } from './roomrankingController.service';
+export * from './waiterController.service';
+import { WaiterControllerService } from './waiterController.service';
+export const APIS = [AdminControllerService, BookingControllerService, CustomerControllerService, RoomControllerService, RoomrankingControllerService, WaiterControllerService];
